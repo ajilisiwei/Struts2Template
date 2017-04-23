@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<!-- struts.enable.DynamicMethodInvocation设置为false,同时allowed-methods添加可访问的方法 -->
+    <package name="customer" namespace="/customer" extends="struts-default">
+    	<action name="customer_*" class="com.wei.customer.action.CustomerAction" method="{1}">
+    		<result name="{1}">/customer/{1}Customer.jsp</result>
+    		<allowed-methods>add,update,delete</allowed-methods>
+    	</action>
+    </package>
+</struts>

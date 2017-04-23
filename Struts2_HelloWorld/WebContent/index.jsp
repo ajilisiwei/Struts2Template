@@ -10,6 +10,13 @@
 	<p>${pageContext.request.contextPath}</p>
 	<a href="${pageContext.request.contextPath}/helloworld.action">请点击这里</a>
 	<br>
-	<a href="${pageContext.request.contextPath}/hello.action">测试hello.action</a>
+	<a href="${pageContext.request.contextPath}/myaction/hello.action">测试hello.action</a>
+	<br>
+	<h2>以下为动态方法调用</h2>
+	<a href="${pageContext.request.contextPath}/customer/customer_add.action">新增用户</a>
+		<br>
+	<a href="${pageContext.request.contextPath}/customer/customer_update.action">修改用户</a>
+		<br>
+	<a href="${pageContext.request.contextPath}/customer/customer_delete.action">删除用户</a>
 </body>
 </html>

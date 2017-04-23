@@ -3,9 +3,10 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-
+<!-- 	struts2.5关于动态方法调用设置，默认是false的 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<!-- 访问url /helloworld.action -->
-    <package name="default" namespace="/" extends="struts-default">
+   <package name="default" namespace="/" extends="struts-default">
         <action name="helloworld" class="com.wei.action.HelloWorldAction">
             <result>/success.jsp </result>
         </action>
@@ -18,4 +19,5 @@
     		<result name="error">/error.jsp</result>
     	</action>
     </package>
+    <include file="customer.xml"></include>
 </struts>
