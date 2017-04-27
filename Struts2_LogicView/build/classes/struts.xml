@@ -46,4 +46,35 @@
     		<result name="success" type="dispatcher">/success.jsp</result>
     	</action>
     </package>
+    
+    <!-- 04.自定义视图输出验证码 -->
+    <package name="p3" namespace="/" extends="struts-default">
+    	<result-types>
+    		<result-type name="captcha" class="com.wei.strutsaction.CaptachResult"></result-type>
+    	</result-types>
+    	<action name="captcha">
+    		<result name="success" type="captcha">
+    			<param name="width">150</param>
+    		</result>
+    	</action>
+    </package>
+    
+    <!-- 051.动态参数注入 -->
+    <package name="p5" namespace="/" extends="struts-default">
+      	<!-- 方式一 -->
+    	<action name="regist" class="com.wei.action.UserAction" method="regist">
+    		<result name="success">/success.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action>
+    	<!-- 方式二  模型-->
+    	<action name="regist2" class="com.wei.action.PersonAction" method="regist">
+    		<result name="success">/success.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action>
+    	<!-- 方式三 模型驱动 -->
+    	<action name="regist3" class="com.wei.action.CustomerAction" method="regist">
+    		<result name="success">/success.jsp</result>
+    		<result name="error">/error.jsp</result>
+    	</action>
+    </package>
 </struts>
