@@ -77,4 +77,11 @@
     		<result name="error">/error.jsp</result>
     	</action>
     </package>
+    
+    <!-- 静态参数注入 -->
+    <package name="p6" namespace="/p6" extends="struts-default">
+    	<action name="regist" class="com.wei.action.StudentAction" method="regist">
+    		<param name="name">Tom</param>
+    	</action>
+    </package>
 </struts>
