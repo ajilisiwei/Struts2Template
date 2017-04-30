@@ -28,4 +28,18 @@
     		<allowed-methods>query,update</allowed-methods>
     	</action>
     </package>
+    
+    <package name="p3" namespace="/p3" extends="struts-default">
+        <interceptors>
+        	<interceptor name="demo3Intercepter" class="com.wei.intercepter.Demo3Intercepter"></interceptor>
+        </interceptors>
+        <action name="*" class="com.wei.action.Demo2Action" method="{1}">
+        	<interceptor-ref name="demo3Intercepter">
+        		<param name="excludeMethods">query</param>
+        	</interceptor-ref>
+        	<result name="login">/demo2/login.jsp</result>
+        	<result name="success">/success.jsp</result>
+        	<allowed-methods>query,update</allowed-methods>
+        </action>
+    </package>
 </struts>
