@@ -1,0 +1,12 @@
+一.Struts2中的拦截器
+	常用的拦截器：Struts2中功能核心。是一种AOP编程思想的具体应用。
+	modelDriven：模型驱动
+	servletConfig：获取ServletAPI
+	staticParams：静态参数注入
+	params：动态参数注入
+	validation：输入验证，声明式验证。
+	等等
+1.自定义拦截器:demo1Intercrpter
+2.执行方法之前验证是否登录(针对所有方法)
+3.执行方法之前验证是否登录(针对指定方法)
+	

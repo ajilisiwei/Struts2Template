@@ -3,10 +3,29 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- 	struts2.5关于动态方法调用设置，默认是false的 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <!-- 静态参数注入 -->
-    <package name="p6" namespace="/" extends="struts-default">
-    	<action name="regist" class="com.wei.action.HelloWorldAction" method="execute">
+    <package name="p1" namespace="/p1" extends="struts-default">
+	    <interceptors>
+	    	<interceptor name="demo1Intercepter" class="com.wei.intercepter.Demo1Intercepter"></interceptor>
+	    </interceptors>
+    	<action name="regist" class="com.wei.action.Demo1Action" method="regist">
+    		<interceptor-ref name="demo1Intercepter"></interceptor-ref>
     		<result name="success">/success.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="p2" namespace="/p2" extends="struts-default">
+    	<interceptors>
+    		<interceptor name="demo2Intercepter" class="com.wei.intercepter.Demo2Intercepter"></interceptor>
+    	</interceptors>
+    	<action name="*" class="com.wei.action.Demo2Action" method="{1}">
+    		<interceptor-ref name="demo2Intercepter"></interceptor-ref>
+    		<result name="login">/demo2/login.jsp</result>
+    		<result name="success">/success.jsp</result>
+    		<allowed-methods>query,update</allowed-methods>
     	</action>
     </package>
 </struts>

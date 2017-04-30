@@ -2,7 +2,7 @@ package com.wei.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class HelloWorldAction extends ActionSupport{
+public class Demo1Action extends ActionSupport{
 	/**
 	 * 
 	 */
